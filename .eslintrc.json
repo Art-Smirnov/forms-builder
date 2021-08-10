@@ -16,14 +16,19 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "airbnb-typescript/base",
+        "prettier",
+        "plugin:prettier/recommended"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": [
+              "app"
+            ],
             "style": "camelCase"
           }
         ],
@@ -31,20 +36,65 @@
           "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": [
+              "app"
+            ],
             "style": "kebab-case"
+          }
+        ],
+        "import/prefer-default-export": "off",
+        "class-methods-use-this": "off",
+        "no-param-reassign": "off",
+        "no-console": "off",
+        "default-case": "off",
+        "prefer-destructuring": "off"
+      }
+    },
+    {
+      "files": [
+        "*.spec.ts",
+        "*.d.ts"
+      ],
+      "parserOptions": {
+        "project": "tsconfig.spec.json"
+      },
+      "extends": [
+        "plugin:jasmine/recommended"
+      ],
+      "plugins": [
+        "jasmine"
+      ],
+      "env": {
+        "jasmine": true
+      },
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": [
+        "index.html",
+        "*.component.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {
+        "max-len": [
+          "error",
+          {
+            "code": 140
           }
         ]
       }
     },
     {
       "files": [
-        "*.html"
+        "*.component.ts"
       ],
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
-      "rules": {}
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ]
     }
   ]
 }
