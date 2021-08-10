@@ -10,7 +10,11 @@ module.exports = {
         ],
         createDefaultProgram: true
       },
-      extends: ["plugin:@angular-eslint/recommended"],
+      extends: [
+        "plugin:@angular-eslint/recommended",
+        // Стайл гайд AirBnB
+        'airbnb-typescript/base'
+      ],
       rules: {
         ...
       }
