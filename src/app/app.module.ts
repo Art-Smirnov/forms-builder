@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatButtonModule } from '@angular/material/button';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppComponent } from './app.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { DropSectionComponent } from './drop-section/drop-section.component';
@@ -18,7 +19,13 @@ import { ButtonComponent } from './button/button.component';
     DragSectionComponent,
     ButtonComponent,
   ],
-  imports: [BrowserModule, NoopAnimationsModule, CdkAccordionModule, MatButtonModule],
+  imports: [
+    BrowserModule,
+    NoopAnimationsModule,
+    CdkAccordionModule,
+    MatButtonModule,
+    DragDropModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
